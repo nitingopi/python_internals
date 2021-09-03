@@ -10,6 +10,6 @@ class CurrentAccount(Account):
     def withdraw(self, amount):
         # print(self)
         if (amount > self._balance + self.cc_limit):
-            print("you have exceeded your credit limit")
+            raise Exception("you have exceeded your credit limit")
         else:
             self._balance -= amount

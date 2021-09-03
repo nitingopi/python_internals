@@ -9,6 +9,7 @@ class SavingsAccount(Account): # how to override classes in Python
     # override the base class behavior
     def withdraw(self, amount):
         if(self._balance - amount < self.__min_bal):
-            print("Your poor guy.")
+            # print("Your poor guy.")
+            raise Exception("Your poor guy")
         else:
             self._balance -= amount

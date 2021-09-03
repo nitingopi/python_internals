@@ -14,13 +14,14 @@ class LinkedList:
         new_node = Node(value)
         if None is self.head:
             self.head = new_node
-            self.tail = None 
+            self.tail = new_node
 
         else:
             current = self.head
-            while current.tail is not None:
+            while current.next is not None:
                 current = current.next
             current.next = new_node
+            self.tail = current.next
             
 
     def print_forward(self):
@@ -32,5 +33,8 @@ class LinkedList:
 ll = LinkedList()
 ll.add_to_back(2)
 ll.add_to_back(3)
+ll.add_to_back(4)
+ll.add_to_back(5)
+
 ll.print_forward()                     
 
